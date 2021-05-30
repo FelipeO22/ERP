@@ -9,12 +9,12 @@ import { FacturasService } from './facturas/facturas/facturas.service';
 @Module({
   imports: [TypeOrmModule.forRoot({
     type: 'mongodb',
-    url:
-      'mongodb+srv://<admin>:<password>@chnirt-graphql-apollo-vg0hq.mongodb.net/nest?retryWrites=true&w=majority',
-    entities: [join(__dirname, '**/**.entity{.ts,.js}')],
-    synchronize: true,
-    useNewUrlParser: true,
-    logging: true,
+    host: 'localhost',
+    port: 3306,
+    username: 'root',
+    database: 'test',
+    entities: [],
+    synchronize: false,
   })],
   controllers: [AppController, FacturasController],
   providers: [AppService, FacturasService],
